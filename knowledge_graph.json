@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "STM32",
+      "type": "Microcontroller",
+      "desc": "STMicroelectronics MCU"
+    },
+    {
+      "id": "ARM Cortex-M",
+      "type": "Architecture",
+      "desc": "ARM processor core"
+    },
+    {
+      "id": "I2C",
+      "type": "Protocol",
+      "desc": "Serial communication"
+    },
+    {
+      "id": "FreeRTOS",
+      "type": "RTOS",
+      "desc": "Real-time OS for embedded"
+    },
+    {
+      "id": "Embedded Linux",
+      "type": "OS",
+      "desc": "Linux for embedded systems"
+    },
+    {
+      "id": "RTOS"
+    },
+    {
+      "id": "Linux"
+    }
+  ],
+  "edges": [
+    {
+      "source": "STM32",
+      "target": "ARM Cortex-M",
+      "relation": "uses"
+    },
+    {
+      "source": "I2C",
+      "target": "STM32",
+      "relation": "supported_by"
+    },
+    {
+      "source": "FreeRTOS",
+      "target": "RTOS",
+      "relation": "type_of"
+    },
+    {
+      "source": "Embedded Linux",
+      "target": "Linux",
+      "relation": "variant_of"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+// knowledge_graph.json
+{
+  "nodes": [
+    { "id": "STM32", "type": "Microcontroller", "desc": "STMicroelectronics MCUs" },
+    { "id": "I2C", "type": "Protocol", "desc": "Serial communication" }
+  ],
+  "edges": [
+    { "source": "STM32", "target": "ARM Cortex-M", "relation": "uses" }
+  ]
+}
