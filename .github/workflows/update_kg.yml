@@ -1,0 +1,39 @@
+name: Update Knowledge Graph
+on:
+  push:
+    paths:
+      - 'knowledge_graph.json'  # Only trigger when this file changes
+  pull_request:
+    paths:
+      - 'knowledge_graph.json'
+
+jobs:
+  generate_kg:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: pip install networkx pyvis
+
+      # Step 4: Run the Python script to regenerate KG
+      - name: Generate Knowledge Graph
+        run: python generate_kg.py
+
+      # Step 5: Commit and push the updated HTML file
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "unmeshdange2664@gmail.com"
+          git config --global user.email "Unmesh2808"
+          git add knowledge_graph.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update knowledge graph"
+          git push
