@@ -11,11 +11,6 @@
       "desc": "ARM processor core"
     },
     {
-      "id": "I2C",
-      "type": "Protocol",
-      "desc": "Serial communication"
-    },
-    {
       "id": "FreeRTOS",
       "type": "RTOS",
       "desc": "Real-time OS for embedded"
